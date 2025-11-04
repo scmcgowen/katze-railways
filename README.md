@@ -5,4 +5,4 @@ Improves railways in a few ways, currently by adding Rail Assemblers and Modular
 Modular Trains adds new cargo wagons and locomotives with equipment grids, as well as a Locomotive Power Link item that provides power to the grid while the train has fuel.
 
 # Rail Assembler
-Assembles as fast as an Assembler 3
+Assembles as fast as an Assembler 3, but is bigger and has 50% base productivity, and is limited to rail recipes
