@@ -14,16 +14,17 @@ local function give_power_to_wagons(wagons)
       end
       local locomotive_power = wagon.grid.find("locomotive-power") -- find first locomotive power object and give it power
       if locomotive_power then
-        locomotive_power.energy = settings.startup["power-per-locomotive"].value * 1000 * locomotive_count / 60
+        locomotive_power.energy = settings.startup["power-per-locomotive"].value * 1000 * locomotive_count / 2
       end
     end
   end
 end
 
 local function on_tick(data)
+  if data.tick %30 == 0 then
   for _,surface in pairs(game.surfaces) do
-    give_power_to_wagons(surface.find_entities_filtered{name="modular-wagon"}) -- get all modular wagons
-    give_power_to_wagons(surface.find_entities_filtered{name="modular-locomotive"})
+    give_power_to_wagons(surface.find_entities_filtered{name={"modular-wagon"}}) -- get all modular wagons
+  end
   end
 end
 script.on_event(defines.events.on_tick,on_tick)
